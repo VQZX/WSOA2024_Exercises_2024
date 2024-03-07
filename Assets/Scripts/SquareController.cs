@@ -39,7 +39,7 @@ public class SquareController : MonoBehaviour
     private void HandleMovement()
     {
         float x = initialLocalPosition.x + radiusOfMotion * Mathf.Cos(Time.time * movementSpeed);
-        float y = initialLocalPosition.y +radiusOfMotion * Mathf.Sin(Time.time * movementSpeed);
+        float y = initialLocalPosition.y + radiusOfMotion * Mathf.Sin(Time.time * movementSpeed);
 
         transform.localPosition = new Vector3(x, y);
 
