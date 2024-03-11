@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using InputTutorial;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -46,11 +45,33 @@ public class DirectInput : MonoBehaviour
 
     private void ManageTranslation()
     {
-        movementControl.ManageTranslation(currentKeyboard);
+        Vector2 inputDirection = new Vector2();
+        if (currentKeyboard.wKey.isPressed)
+        {
+            inputDirection += Vector2.up;
+        }
+        if (currentKeyboard.sKey.isPressed)
+        {
+            inputDirection += Vector2.down;
+        }
+        if (currentKeyboard.aKey.isPressed)
+        {
+            inputDirection += Vector2.left;
+        }
+        if (currentKeyboard.dKey.isPressed)
+        {
+            inputDirection += Vector2.right;
+        }
+
+        inputDirection = inputDirection.normalized;
+        
+        
+        movementControl.ManageTranslation(inputDirection);
     }
     
     private void ManageOrientation(DeltaControl mouseDelta)
     {
-        movementControl.ManageOrientation(mouseDelta);
+        var delta = new Vector2(mouseDelta.x.value, mouseDelta.y.value);
+        movementControl.ManageOrientation(delta);
     }
 }

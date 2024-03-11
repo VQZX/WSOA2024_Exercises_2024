@@ -7374,6 +7374,7 @@ GameObject:
   - component: {fileID: 633139200}
   - component: {fileID: 633139204}
   - component: {fileID: 633139205}
+  - component: {fileID: 633139206}
   m_Layer: 0
   m_Name: Capsule_Direct
   m_TagString: Untagged
@@ -7477,7 +7478,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633139199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f369554c8e64c334186a1c1e9ca495ad, type: 3}
   m_Name: 
@@ -7498,7 +7499,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 21
   angularSpeed: 10
-  currentMovementState: 1
+--- !u!114 &633139206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633139199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49e86e740474f178c490f668a582671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementControl: {fileID: 633139205}
+  move:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: bf2f7a0e-16e1-4bf0-910a-d581a14d4b06
+    m_Processors: Scale
+    m_Interactions: Hold(duration=0.1,pressPoint=0.1)
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 0ca88cea-eab5-4d2a-b3e5-13fc024cb116
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 49139d16-43c4-4187-b078-c820acb1f545
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 0fd0d966-8733-4c4d-9a59-bed19a51afce
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 739280fe-a895-4db8-8728-c90ef8c80abe
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 2fd20472-9cc9-4234-8a11-b900d6dc1d03
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
+  turn:
+    m_Name: Turn
+    m_Type: 2
+    m_ExpectedControlType: Delta
+    m_Id: f26b3842-5d60-4f9e-9e93-955e669ea282
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b507658d-b1d5-4c4e-9917-1e29691fcd4c
+      m_Path: <Mouse>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &636135605
 PrefabInstance:
   m_ObjectHideFlags: 0

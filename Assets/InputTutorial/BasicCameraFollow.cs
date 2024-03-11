@@ -7,21 +7,7 @@ public class BasicCameraFollow : MonoBehaviour
 
     [SerializeField]
     private Vector3 offset;
-
-
-    private float currentTime = 0;
     
-    
-    private enum Transitioning
-    {
-        Nothing,
-        CanUpdatePosition,
-        UpdatingPosition
-    }
-
-    private Transitioning transitionState = Transitioning.CanUpdatePosition;
-    
-
     private void Update()
     {
         if (target == null)

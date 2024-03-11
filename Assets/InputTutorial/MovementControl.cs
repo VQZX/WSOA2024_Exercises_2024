@@ -12,50 +12,11 @@ namespace InputTutorial
         [SerializeField]
         private float angularSpeed = 10f;
         
-        private enum MovementState
-        {
-            Nothing,
-            AllowedToMove,
-            NotAllowedToMove,
-            LimitedMovement
-        }
-        
-        private enum OrientationState
-        {
-            Nothing,
-            Moving,
-            NotMoving
-        }
-
-        private OrientationState orientationState = OrientationState.NotMoving;
-    
-        [SerializeField]
-        private MovementState currentMovementState = MovementState.AllowedToMove;
-        
-        public void ManageTranslation(Keyboard currentKeyboard)
+        public void ManageTranslation(Vector2 normalisedPosition)
         {
             var motion = Vector3.zero;
-            if (currentKeyboard.wKey.isPressed)
-            {
-                motion += Vector3.forward;
-            }
-
-            if (currentKeyboard.sKey.isPressed)
-            {
-                motion += Vector3.back;
-            }
-
-            if (currentKeyboard.aKey.isPressed)
-            {
-                motion += Vector3.left;
-            }
-
-            if (currentKeyboard.dKey.isPressed)
-            {
-                motion += Vector3.right;
-            }
-
-            motion = motion.normalized;
+            motion.x = normalisedPosition.x;
+            motion.z = normalisedPosition.y;
 
             var motionVector = motion * speed * Time.deltaTime;
             
@@ -81,9 +42,9 @@ namespace InputTutorial
             transform.position += rotatedMotionVector * speed * Time.deltaTime;
         }
     
-        public void ManageOrientation(DeltaControl mouseDelta)
+        public void ManageOrientation(Vector2 delta)
         {
-            var playerRotation = angularSpeed * mouseDelta.x.value * Time.deltaTime;
+            var playerRotation = angularSpeed * delta.x * Time.deltaTime;
             transform.localRotation *= Quaternion.Euler(0, playerRotation, 0);
         }
     }
