@@ -7373,6 +7373,7 @@ GameObject:
   - component: {fileID: 633139201}
   - component: {fileID: 633139200}
   - component: {fileID: 633139204}
+  - component: {fileID: 633139205}
   m_Layer: 0
   m_Name: Capsule_Direct
   m_TagString: Untagged
@@ -7481,11 +7482,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f369554c8e64c334186a1c1e9ca495ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
-  angularSpeed: 10
+  movementControl: {fileID: 633139205}
   mouseDeadZone: 0.05
-  smoothingSpeed: 0.5
-  rotationTime: 0.16
+--- !u!114 &633139205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633139199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fef6676cf01425f8daef519c6765ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 21
+  angularSpeed: 10
   currentMovementState: 1
 --- !u!1001 &636135605
 PrefabInstance:
