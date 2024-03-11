@@ -15,7 +15,7 @@ public class SquareManager : MonoBehaviour
     [SerializeField]
     private float positionMultiplier = 3;
 
-    private List<SquareController> squares = new List<SquareController>();
+    //private List<SquareController> squares = new List<SquareController>();
     private float initialX;
 
     private void Start()
@@ -29,8 +29,12 @@ public class SquareManager : MonoBehaviour
             //var clone = Instantiate(template, position, Quaternion.identity);
             var clone = Instantiate(template, transform);
             clone.transform.localPosition = position;
-            squares.Add(clone);
+            //squares.Add(clone);
         }
+
+        var squareComponents = transform.GetComponentInChildren<SquareController>();
+
+        transform.GetChild(665);
     }
 
     private void Update()
