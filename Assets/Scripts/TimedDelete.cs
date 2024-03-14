@@ -34,7 +34,6 @@ public class TimedDelete : MonoBehaviour
 
                 currentTime -= Time.deltaTime;
                 var normalizedTime = currentTime / totalTime;
-                Debug.Log($"Normalized Time: {normalizedTime}");
                 var nextSize = Vector3.Lerp(initialSize, Vector3.zero, 1 - normalizedTime);
                 nextSize.z = 1;
                 transform.localScale = nextSize;

@@ -16,14 +16,6 @@ public class Projectile : MonoBehaviour
         {
                 body.velocity = velocity;
         }
-
-        private void Update()
-        {
-                if (body.velocity.sqrMagnitude > 0)
-                {
-                        Debug.Log($"Velocity: {body.velocity}");
-                }
-        }
         
         private void OnCollisionEnter2D(Collision2D other)
         {
