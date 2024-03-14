@@ -1,13 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using InputTutorial;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
-using Quaternion = UnityEngine.Quaternion;
-using Vector3 = UnityEngine.Vector3;
 
 public class DirectInput : MonoBehaviour
 {
@@ -40,6 +34,7 @@ public class DirectInput : MonoBehaviour
                      currentKeyboard.sKey.isPressed ||
                      currentKeyboard.aKey.isPressed ||
                      currentKeyboard.dKey.isPressed;
+        
         return output;
     }
 

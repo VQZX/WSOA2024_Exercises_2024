@@ -12,7 +12,7 @@ namespace InputTutorial
         [SerializeField]
         private float angularSpeed = 10f;
         
-        public void ManageTranslation(Vector2 normalisedPosition)
+        public virtual void ManageTranslation(Vector2 normalisedPosition)
         {
             var motion = Vector3.zero;
             motion.x = normalisedPosition.x;
@@ -42,7 +42,7 @@ namespace InputTutorial
             transform.position += rotatedMotionVector * speed * Time.deltaTime;
         }
     
-        public void ManageOrientation(Vector2 delta)
+        public virtual void ManageOrientation(Vector2 delta)
         {
             var playerRotation = angularSpeed * delta.x * Time.deltaTime;
             transform.localRotation *= Quaternion.Euler(0, playerRotation, 0);
