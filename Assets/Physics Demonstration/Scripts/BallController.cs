@@ -65,6 +65,8 @@ namespace Physics_Demonstration
             attachedBody.AddForce(calculatedForce, ForceMode2D.Impulse);
             state = BallState.Moving;
             currentMagnitude = attachedBody.velocity.magnitude;
+
+            Physics2D.gravity = new Vector2(3, 5);
         }
 
         private void Start()

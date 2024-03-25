@@ -2,8 +2,11 @@
 
 namespace Physics_Demonstration
 {
-    public class PrefabUtilities : MonoBehaviour
+    public static class PrefabUtilities
     {
-        
+        public static void DoNothing()
+        {
+            
+        }
     }
 }
